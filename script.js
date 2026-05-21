@@ -1,30 +1,48 @@
+function temaMasculino() {
+    // Pega o body e muda a cor para azul ( Masculino )
+    document.body.style.background = '#1e3a8a'
+}
+
+function temaFeminino() {
+    // Pega o body e muda a cor para rosa ( Feminino )
+    document.body.style.background = '#ec4899'
+}
+
+
 function calcular() {
     const altura = Number(document.getElementById('altura').value) / 100
     const peso = Number(document.getElementById('peso').value)
     const resultado = document.getElementById('res')
 
-    if (altura == 0 || peso == 0) {
+    if (!altura || !peso) {
         window.alert('Preencha todos os campos acima!')
-    } else {
+        return
+    } 
+    // Formula do IMC 
+    const imc = peso / (altura ** 2)
 
-        var imc = peso / (altura ** 2)
-        // classificação 
-        let clas = ''
-
-        if (imc < 18.5) {
-            clas = 'Magreza'
-        } else if (imc < 24.9) {
-            clas = 'Normal'
-        } else if (imc < 29.9) {
-            clas = 'Sobrepeso'
-        } else if (imc < 35.9) {
-            clas = 'Obesidade grau 1'
-        }else if (imc < 39.9) {
-            clas = 'Obesidade grau 2'
-        }else { 
-            clas = 'Obesidade grau 3'
+    const classificacao = [
+        {
+            limite: 18.5,
+            texto: 'Abaixo do peso!'
+        },
+        {
+            limite: 25,
+            texto: 'Peso normal!'
+        },
+        {
+            limite: 30,
+            texto: 'Sobrepeso!'
+        },
+        {
+            limite: Infinity,
+            texto: 'Obesidade!'
         }
-        console.log(clas)
-        resultado.innerHTML = `Seu IMC é ${imc.toFixed(2)} (${clas})`
-    }
+    ]
+
+    // Procura a classificacao 
+    const resultadoImc = classificacao.find((item) => imc < item.limite)
+
+    // Mostra o resultado 
+    resultado.innerHTML= `Seu peso é ${imc.toFixed(2)}, ${resultadoImc.texto}`
 }

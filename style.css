@@ -1,6 +1,6 @@
 body {
     background:linear-gradient(135deg, #759cf0, #1e3a8a);
-    font-size: arial;
+    font-family: Arial;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -33,9 +33,9 @@ h1 {
 }
 /* caixa de selação do peso e altura depois de clicar 'fucus'*/
 input:focus{
-    outline;none;
+    outline:none;
     border-color: #2563eb;
-    box-shadow: 0 0 10px rgba(37,99,235,0.3s);
+    box-shadow: 0 0 10px rgba(37,99,235,0.3);
 }
 /* o botão não tem interação, botão fica parado */
 button {
@@ -48,7 +48,7 @@ button {
     font-size: 16px;
     font-weight: bold;
     cursor:pointer;
-    transition;0.3s;
+    transition:0.3s;
 }
 /* Aqui o usuário percebe a interação */
 button:hover {
@@ -67,4 +67,38 @@ button:hover {
     display:flex;
     justify-content:center;
     align-items:center;
+}
+#Masculino {
+    width:100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background:#2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+#Masculino:hover {
+    background:#1d4ed8;
+    transform:scale(1.02);
+}
+#Feminino {
+    width:100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background:#ea5ea4;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition:0.3s;
+
+}
+#Feminino:hover {
+    background:#ec4899;
+    transform:scale(1.02);
 }

@@ -7,26 +7,31 @@
     <!-- link para a estilização  -->
     <link rel="stylesheet" href="style.css">
     <!-- Nome da página -->
-    <title>Calculadora de IMC</title>    
+    <title>Calculadora de IMC</title>
 </head>
 
 <body>
     <div id="caixa">
 
-    <!-- Título da página -->
-    <h1>Calculador de IMC</h1>
-    <!-- Subtítulo  -->
-     <p class="subtitulo">Descubra o seu índice de massa corporal</p>
-    <!-- Caixa para selecionar alturar -->
-    <input type="number" name="altura" id="altura" placeholder="Altura (cm)">
-    <!-- Caixa para selecionar peso  -->
-    <input type="number" name="peso" id="peso" placeholder="Peso (Kg)">
-    <!-- Botão para calcular o IMC  -->
-    <button onclick="calcular()">Calcular</button>
-     <!-- Resultado  -->
-    <div id="res">
-        Preencha os dados acima
-    </div>
+        <!-- Título da página -->
+        <h1>Calculador de IMC</h1>
+        <!-- Subtítulo  -->
+        <p class="subtitulo">Descubra o seu índice de massa corporal</p>
+        <!-- Botões para selecionar tema  -->
+        <p>
+            <input id="Masculino" type="button" value="Masculino" onclick="temaMasculino()">
+            <input id="Feminino" type="button" value="Feminino" onclick="temaFeminino()">
+        </p>
+        <!-- Caixa para selecionar alturar -->
+        <input type="number" name="altura" id="altura" placeholder="Altura (cm)">
+        <!-- Caixa para selecionar peso  -->
+        <input type="number" name="peso" id="peso" placeholder="Peso (Kg)">
+        <!-- Botão para calcular o IMC  -->
+        <button onclick="calcular()">Calcular</button>
+        <!-- Resultado  -->
+        <div id="res">
+            Preencha os dados acima
+        </div>
 
     </div>
 
